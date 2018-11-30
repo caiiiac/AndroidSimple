@@ -1,79 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/icon"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"/>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#F00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:background="#ff0"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:background="#0ff"/>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:background="#f0f"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="#0f0">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#0aa"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#00f"
-        android:orientation="vertical">
-
-        <RadioGroup
-            android:id="@+id/sex_rg"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:text="账号:"/>
 
-            <RadioButton
-                android:id="@+id/radio_btn_boy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="男"/>
-            <RadioButton
-                android:id="@+id/radio_btn_gril"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="女"/>
-        </RadioGroup>
+        <EditText
+            android:id="@+id/account_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码:"/>
+
+        <EditText
+            android:id="@+id/password_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:onClick="loginClick"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="插入数据"
+            android:textSize="20sp"
+            android:onClick="insertContact"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="账号更新"
+            android:textSize="20sp"
+            android:onClick="updateContact"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="账号删除"
+            android:textSize="20sp"
+            android:onClick="deleteContact"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="手机查询"
+            android:textSize="20sp"
+            android:onClick="queryContact"/>
     </LinearLayout>
 </LinearLayout>
