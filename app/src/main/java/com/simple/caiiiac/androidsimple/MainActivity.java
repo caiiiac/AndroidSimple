@@ -2,6 +2,7 @@ package com.simple.caiiiac.androidsimple;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String data = (String) adapter.getItem(position);
                 Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
-
             }
         });
 

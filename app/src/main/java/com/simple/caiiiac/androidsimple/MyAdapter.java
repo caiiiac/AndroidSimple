@@ -24,7 +24,7 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return mDatas != null ? mDatas.get(position) : null;
     }
 
     @Override
