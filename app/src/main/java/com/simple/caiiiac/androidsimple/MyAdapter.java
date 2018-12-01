@@ -36,8 +36,8 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView = null;
         if (convertView == null) {
-            convertView = mInflater.inflate(android.R.layout.simple_list_item_1, null);
-            textView = convertView.findViewById(android.R.id.text1);
+            convertView = mInflater.inflate(R.layout.spinner_layout, null);
+            textView = convertView.findViewById(R.id.textTitle);
             convertView.setTag(textView);
         } else {
             textView = (TextView) convertView.getTag();

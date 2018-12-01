@@ -2,9 +2,11 @@ package com.simple.caiiiac.androidsimple;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,21 +22,26 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MyAdapter(this);
 
-        ListView listView =  (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
+        final Spinner spinner =  (Spinner) findViewById(R.id.spinner);
+        spinner.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        AdapterView.OnItemSelectedListener onItemSelectedListener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("caiiiac","" + position);
+            }
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String data = (String) adapter.getItem(position);
-                Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        };
+        spinner.setOnItemSelectedListener(onItemSelectedListener);
+
 
         ArrayList<String> datas = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 5; i++) {
             datas.add("第" + i + "行");
         }
 
