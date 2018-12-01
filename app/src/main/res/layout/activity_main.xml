@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
+    <ExpandableListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:dividerHeight="1dp"
-        android:fadingEdge="none" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
