@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MyAdapter(this);
 
-        ListView listView =  (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
+        GridView gridView =  (GridView) findViewById(R.id.gridView);
+        gridView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
