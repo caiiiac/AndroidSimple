@@ -5,9 +5,15 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/getBtn"
+        android:id="@+id/normalDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="豆瓣电影Top250" />
+        android:text="对话框" />
+
+    <Button
+        android:id="@+id/singleDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单选框"/>
 
 </LinearLayout>
