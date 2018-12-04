@@ -4,87 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@mipmap/icon"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="center_horizontal"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="账号:"/>
-
-        <EditText
-            android:id="@+id/account_et"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="密码:"/>
-
-        <EditText
-            android:id="@+id/password_et"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:inputType="textPassword"/>
-    </LinearLayout>
-
     <Button
-        android:layout_width="80dp"
+        android:id="@+id/getBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="登录"
-        android:textSize="20sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:onClick="loginClick"/>
+        android:text="豆瓣电影Top250" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="插入数据"
-            android:textSize="20sp"
-            android:onClick="insertContact"/>
-        <Button
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="账号更新"
-            android:textSize="20sp"
-            android:onClick="updateContact"/>
-        <Button
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="账号删除"
-            android:textSize="20sp"
-            android:onClick="deleteContact"/>
-        <Button
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="手机查询"
-            android:textSize="20sp"
-            android:onClick="queryContact"/>
-    </LinearLayout>
 </LinearLayout>
