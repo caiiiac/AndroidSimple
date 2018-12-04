@@ -57,4 +57,33 @@ public class MainActivity extends BaseActivity {
                 .show();
     }
 
+    // 复选框
+    String[] colors = new String[]{"红色","黄色","绿色"};
+    boolean[] checkeds = new boolean[]{true, false, false};
+    @Event(value = R.id.multiDialog)
+    private void openMultiDialog(View view) {
+        new AlertDialog.Builder(this)
+                .setTitle("选择喜欢的颜色")
+                .setMultiChoiceItems(colors, checkeds, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        checkeds[which] = isChecked;
+                    }
+                })
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String text = "";
+                        for (int i = 0; i < checkeds.length; i++) {
+                            if (checkeds[i]) {
+                                text += colors[i] + " ";
+                            }
+                        }
+                        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("取消", null)
+                .create()
+                .show();
+    }
 }
