@@ -1,21 +1,16 @@
 package com.simple.caiiiac.androidsimple;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.PersistableBundle;
 import android.view.View;
 
-
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
-import org.xutils.x;
 
-import java.util.HashMap;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
-
 
 
     @Override
@@ -24,37 +19,13 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Event(value = R.id.getBtn)
+    @Event(value = R.id.openSecond)
     private void onClickDownload(View view) {
 
-        RequestParams params = new RequestParams(top250());
+        Intent second = new Intent(this, SecondActivity.class);
+        second.putExtra("title", "第二层界面");
+        second.putExtra("person", new Person("二层楼", 18));
+        startActivity(second);
 
-        x.http().get(params, new Callback.CommonCallback<HashMap>() {
-
-            @Override
-            public void onSuccess(HashMap result) {
-                Log.d("caiiiac","success");
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-                Log.d("caiiiac","e");
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-                Log.d("caiiiac","c");
-            }
-
-            @Override
-            public void onFinished() {
-                Log.d("caiiiac","f");
-            }
-        });
     }
-
-    public String top250() {
-        return "http://api.douban.com/v2/movie/top250";
-    }
-
 }
