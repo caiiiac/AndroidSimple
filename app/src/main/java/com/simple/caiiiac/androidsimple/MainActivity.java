@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
     private void onClickSecond(View view) {
 
         Intent second = new Intent(this, SecondActivity.class);
-        second.putExtra("title", "第二层界面");
+        second.putExtra("title", "显式进入");
         second.putExtra("person", new Person("二层楼", 18));
         startActivity(second);
     }
@@ -33,6 +33,14 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("smsto:10000"));
         intent.putExtra("sms_body", "这是短信内容");
+        startActivity(intent);
+    }
+
+    @Event(value = R.id.openAction)
+    private void openClickAction(View view) {
+        Intent intent = new Intent();
+        intent.setAction("com.simple.android.action.second");
+        intent.putExtra("title", "隐式进入");
         startActivity(intent);
     }
 }

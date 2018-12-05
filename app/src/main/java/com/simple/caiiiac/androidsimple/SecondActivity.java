@@ -15,10 +15,18 @@ public class SecondActivity extends BaseActivity {
 
         // 普通传值
         TextView textView = (TextView) findViewById(R.id.secondTitle);
-        textView.setText(getIntent().getStringExtra("title"));
+        Intent textIntent = getIntent();
+        String title = textIntent.getStringExtra("title");
+        if (title != null) {
+            textView.setText(title);
+        }
+
 
         TextView personText = (TextView) findViewById(R.id.secondPerson);
         Person person = (Person) getIntent().getSerializableExtra("person");
-        personText.setText(person.toString());
+        if (person != null) {
+            personText.setText(person.toString());
+        }
+
     }
 }
