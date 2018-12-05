@@ -10,4 +10,10 @@
         android:layout_height="wrap_content"
         android:text="打开Second" />
 
+    <Button
+        android:id="@+id/openSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="短信"/>
+
 </LinearLayout>
