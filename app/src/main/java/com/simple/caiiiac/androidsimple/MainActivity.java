@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
+
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
@@ -24,6 +26,9 @@ import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import jp.wasabeef.recyclerview.animators.LandingAnimator;
+import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
@@ -37,8 +42,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         //找到控件,
         initView();
@@ -67,20 +70,20 @@ public class MainActivity extends BaseActivity {
 
     private void initView() {
         //为了能确定你的开发身份,要求你上传签名文件keystore的数据摘要SHA1
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
         //需要指定控件的展示方式,不然出不来效果的
         mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         //给控件设置动画效果
-//        mRecyclerView.setItemAnimator(new SlideInLeftAnimator());
-//        //给控件设置分割线
-//        Paint paint = new Paint();
-//        paint.setStrokeWidth(5);
-//        paint.setColor(Color.BLUE);
-//        paint.setAntiAlias(true);
-//        paint.setPathEffect(new DashPathEffect(new float[]{25.0f, 25.0f}, 0));
-//        mRecyclerView.addItemDecoration(
-//                new HorizontalDividerItemDecoration.Builder(this).paint(paint).build());
+        mRecyclerView.setItemAnimator(new LandingAnimator());
+        //给控件设置分割线
+        Paint paint = new Paint();
+        paint.setStrokeWidth(5);
+        paint.setColor(Color.BLUE);
+        paint.setAntiAlias(true);
+        paint.setPathEffect(new DashPathEffect(new float[]{25.0f, 25.0f}, 0));
+        mRecyclerView.addItemDecoration(
+                new HorizontalDividerItemDecoration.Builder(this).paint(paint).build());
     }
 
     @Override
