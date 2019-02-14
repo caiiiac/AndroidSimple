@@ -24,7 +24,8 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Event(value = R.id.getBtn)
+
+    @Event(R.id.getBtn)
     private void onClickDownload(View view) {
 
         RequestParams params = new RequestParams(top250());
