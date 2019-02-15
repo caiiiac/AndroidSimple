@@ -99,32 +99,38 @@ public class MainActivity extends BaseActivity {
         return true;
     }
 
-    private void getLocationInfo(Location location) {
-        boolean flag = Geocoder.isPresent();
+    private void getLocationInfo(final Location location) {
 
-        if (!flag) {
-            try {
-                List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 2);
-                if (addresses.size() > 0) {
-                    Address address = addresses.get(0);
-                    String sAddress;
-                    if (!TextUtils.isEmpty(address.getLocality())) {
-                        if (!TextUtils.isEmpty(address.getFeatureName())) {
-                            //市和周边地址
-                            sAddress = address.getLocality() + " " + address.getFeatureName();
-                        } else {
-                            sAddress = address.getLocality();
+        new Thread() {
+            @Override
+            public void run() {
+                boolean flag = Geocoder.isPresent();
+
+                if (flag) {
+                    try {
+                        List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 2);
+                        if (addresses.size() > 0) {
+                            Address address = addresses.get(0);
+                            String sAddress;
+                            if (!TextUtils.isEmpty(address.getLocality())) {
+                                if (!TextUtils.isEmpty(address.getFeatureName())) {
+                                    //市和周边地址
+                                    sAddress = address.getLocality() + " " + address.getFeatureName();
+                                } else {
+                                    sAddress = address.getLocality();
+                                }
+                            } else {
+                                sAddress = "定位失败";
+                            }
+                            Log.i("c", "sAddress：" + sAddress);
                         }
-                    } else {
-                        sAddress = "定位失败";
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    Log.i("c", "sAddress：" + sAddress);
                 }
-            } catch (IOException e) {
-
-                Log.i("c","出错");
             }
-        }
+        }.start();
+
     }
     @Override
     protected void onStop() {
