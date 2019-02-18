@@ -7,7 +7,11 @@ import org.xutils.x;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 
+
+
 public class MyApplication extends Application {
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -19,5 +23,7 @@ public class MyApplication extends Application {
                 return true;
             }
         });
+
+
     }
 }
