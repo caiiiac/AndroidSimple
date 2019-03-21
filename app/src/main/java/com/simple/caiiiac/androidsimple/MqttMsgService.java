@@ -184,7 +184,8 @@ public class MqttMsgService extends Service {
     private MqttCallback mqttCallback = new MqttCallback() {
 
         @Override
-        public void messageArrived(String topic, MqttMessage message) throws Exception { Log.i(TAG, "收到消息： " + new String(message.getPayload()));
+        public void messageArrived(String topic, MqttMessage message) throws Exception {
+            Log.i(TAG, "收到消息： " + new String(message.getPayload()));
             //收到消息，这里弹出Toast表示。如果需要更新UI，可以使用广播或者EventBus进行发送
 //            Toast.makeText(getApplicationContext(), "messageArrived: " + new String(message.getPayload()), Toast.LENGTH_LONG).show();
             //收到其他客户端的消息后，响应给对方告知消息已到达或者消息有问题等
