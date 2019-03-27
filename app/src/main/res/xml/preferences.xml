@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="设置">
+
+    <android.support.v7.preference.PreferenceCategory
+        android:title="网络配置">
+        <android.support.v7.preference.EditTextPreference android:key="orgCode"
+            android:title="组织机构代码"/>
+
+        <android.support.v7.preference.CheckBoxPreference android:key="faceSwitch"
+            android:title="人脸识别"
+            android:defaultValue="false"/>
+    </android.support.v7.preference.PreferenceCategory>
+
+
+</android.support.v7.preference.PreferenceScreen>
